@@ -8,8 +8,8 @@ I am a Minesweeper player with a personal bests on PC of 1.05+9.97+39.66 = 50.68
 
 My account on multiple platforms are listed down below:
 
-Msgame: https://minesweepergame.com/profile.php?pid=10504
+-Msgame: https://minesweepergame.com/profile.php?pid=10504
 
-Saolei: http://saolei.wang/Player/Index.asp?Id=27924
+-Saolei: http://saolei.wang/Player/Index.asp?Id=27924
 
-League of Minesweeper: ID 72277
+-League of Minesweeper: ID 72277
