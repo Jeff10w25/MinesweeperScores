@@ -3,9 +3,18 @@ import os
 import re
 import settings
 
-source = settings.SOURCE
+source = os.path.join(settings.SOURCE, "replays/")
+source2 = settings.SOURCE
 dest = settings.DEST
 
+# CSV
+for filename in os.listdir(source2):
+    filepath = os.path.join(source2, filename)
+    if os.path.isfile(filepath):
+        if re.search("stats_csv.csv", filepath):
+            shutil.copy(filepath, dest)
+
+# Replays
 for filename in os.listdir(source):
     filepath = os.path.join(source, filename)
     if os.path.isfile(filepath):
