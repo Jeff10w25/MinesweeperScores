@@ -1,9 +1,10 @@
 import shutil
 import os
 import re
+import settings
 
-source = SOURCE
-dest = DEST
+source = settings.SOURCE
+dest = settings.DEST
 
 for filename in os.listdir(source):
     filepath = os.path.join(source, filename)
