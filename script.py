@@ -2,8 +2,8 @@ import shutil
 import os
 import re
 
-source = 'C:/Users/66802/Desktop/Arbiter reboot/replays/'
-dest = 'C:/Users/66802/REPO/MinesweeperScores/'
+source = SOURCE
+dest = DEST
 
 for filename in os.listdir(source):
     filepath = os.path.join(source, filename)
