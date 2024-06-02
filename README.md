@@ -12,6 +12,7 @@ My account on multiple platforms are listed down below:
 
 - Msgame: https://minesweepergame.com/profile.php?pid=10504
 
-- Saolei: http://saolei.wang/Player/Index.asp?Id=27924
+- Saolei: 
+saolei.wang/Player/Index.asp?Id=27924
 
 - League of Minesweeper: ID 72277
