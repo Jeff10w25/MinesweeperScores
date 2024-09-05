@@ -1,6 +1,6 @@
 # MinesweeperScores
 
-Storage for all of my Minesweeper Arbiter replays. Python script is used to copy and sort replays by in-game time.
+Storage for all of my Minesweeper Arbiter replays. Python script is used to copy and sort replays by in-game time. Pandasql for querying data from csv file and make a nice table down below!
 
 ### Notable Scores
 
