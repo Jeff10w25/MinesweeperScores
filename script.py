@@ -42,12 +42,12 @@ def exp_sorter(filepath, destination, dir1, board_type):
             if re.search("%s_(%s[0-9][.])" % (board_type, t), filepath):
                 shutil.copy(filepath, os.path.join(dest_exp, "%s0-%s9/" % (t, t)))
                                     
-# CSV
-# for filename in os.listdir(source2):
-#     filepath = os.path.join(source2, filename)
-#     if os.path.isfile(filepath):
-#         if re.search("stats_csv.csv", filepath):
-#             shutil.copy(filepath, dest)
+#CSV
+for filename in os.listdir(source2):
+    filepath = os.path.join(source2, filename)
+    if os.path.isfile(filepath):
+        if re.search("stats_csv.csv", filepath):
+            shutil.copy(filepath, dest)
 
 # Replays
 for filename in os.listdir(source):
