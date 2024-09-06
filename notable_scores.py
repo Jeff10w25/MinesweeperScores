@@ -51,14 +51,20 @@ result = sqldf(query, locals())
 result_md = result.to_markdown(index=False, tablefmt="github", floatfmt=("", "", "", ".2f", ".3f", ".4f", ".3f", ".2f"))
 print(result_md)
 
-readme = open("README.md").read().split('\n')
+readme = open("README.md").read()
+readme_new = readme.split('\n')
 result_line = result_md.split('\n')
-for i, line in enumerate(readme):
+for i, line in enumerate(readme_new):
 	if '|' in line:
-		readme[i] = result_line[i-6]
-readme_str = '\n'.join(readme)
+		readme_new[i] = result_line[i-6]
+readme_str = '\n'.join(readme_new)
 
 with open("README.md", 'w') as md:
-	md.write(readme_str)
+    # Try writing new table on README.md. If it fails, then change nothing
+    try:
+        md.write(readme_str)
+    except Exception as e:
+        print(f"Writing new table fails. {e}")
+        md.write(readme)
 md.close()
 			
