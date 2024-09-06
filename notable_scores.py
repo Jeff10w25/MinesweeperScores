@@ -23,7 +23,7 @@ query = """
                 SELECT  mode AS Mode, 
                         style AS Style,
                         MAX(435.001/(POWER(Time, 1.7)/BBBV)) AS STNB
-                FROM `ms_df`
+                FROM ms_df
                 WHERE Mode = 'EXP'
                 GROUP BY Style
             )
@@ -39,15 +39,26 @@ query = """
                 MIN(Openings) AS MinOps,
                 MAX(Openings) AS MaxOps
         FROM ms_df as m
-        INNER JOIN `STNB_ALL` AS b
-            ON  m.mode = b.Mode AND
+        INNER JOIN STNB_ALL AS b
+                ON  m.mode = b.Mode AND
                 m.style = b.Style
         GROUP BY m.Mode, m.Style
         ORDER BY IOE DESC;
         """
-    
+
 print("Notable Scores")
-results = sqldf(query, locals())
-print(results.to_markdown(index=False, tablefmt="github", floatfmt=("", "", "", ".2f", ".3f", ".4f", ".3f", ".2f")))
+result = sqldf(query, locals())
+result_md = result.to_markdown(index=False, tablefmt="github", floatfmt=("", "", "", ".2f", ".3f", ".4f", ".3f", ".2f"))
+print(result_md)
 
+readme = open("README.md").read().split('\n')
+result_line = result_md.split('\n')
+for i, line in enumerate(readme):
+	if '|' in line:
+		readme[i] = result_line[i-6]
+readme_str = '\n'.join(readme)
 
+with open("README.md", 'w') as md:
+	md.write(readme_str)
+md.close()
+			
